@@ -22,9 +22,7 @@ export default {
     &__image {
       width: 100%;
       height: 100%;
-      background-image: url(~@/assets/images/404.png);
-      background-size: cover;
-      background-repeat: no-repeat;
+      background: url(~@/assets/images/404.png) center no-repeat;
     }
   }
 </style>
