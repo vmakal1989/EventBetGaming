@@ -30,6 +30,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Login',
   components: {
@@ -39,6 +41,12 @@ export default {
 			login: '',
 			password: '',
 		}
+	},
+  created() {
+    this.isAuth &&	this.$router.push('/')
+  },
+  computed: {
+		...mapGetters(['isAuth']),
 	},
 }
 </script>
@@ -56,7 +64,7 @@ export default {
       &__title {
         font-size: 39px;
         font-weight: bold;
-        color: #333333;
+        color: #fff;
         line-height: 1.2;
         text-align: center;
         margin-bottom: 70px;
@@ -68,13 +76,17 @@ export default {
         border: none;
         border-bottom: 2px solid #d9d9d9;
         font-size: 20px;
-        color: #555555;
+        color: #fff;
         line-height: 1.2;
         width: 100%;
         height: 52px;
         background: transparent;
         padding: 0 5px;
         box-sizing: border-box;
+
+        &::placeholder {
+          color: #555555;
+        }
 
         &:focus {
           border-color: #57b846;
