@@ -12,7 +12,7 @@ export const routes = [
 	},
     {
 		path: '/',
-		component: _import('Main')
+		component: _import('Layout')
 	},
     { 
         path: '*', 
