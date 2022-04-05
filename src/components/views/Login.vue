@@ -84,6 +84,15 @@ export default {
         padding: 0 5px;
         box-sizing: border-box;
 
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover, 
+        &:-webkit-autofill:focus {
+          border-bottom: 2px solid #d9d9d9;
+          -webkit-text-fill-color: #fff;
+          -webkit-box-shadow: 0 0 0px 1000px #181920 inset;
+          transition: background-color 5000s ease-in-out 0s;
+        }
+
         &::placeholder {
           color: #555555;
         }

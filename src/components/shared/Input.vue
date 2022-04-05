@@ -1,8 +1,8 @@
 <template>
   <input
-	v-bind="$attrs" 
-	v-bind:value="value"
-	@input="$emit('input', $event.target.value)"
+    v-bind="$attrs" 
+    v-bind:value="value"
+    @input="$emit('input', $event.target.value)"
   >
 </template>
 
