@@ -1,5 +1,10 @@
 # app
 
+## node version
+```
+14.17.5
+```
+
 ## Project setup
 ```
 npm install

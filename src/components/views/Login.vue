@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <form class="login-form">
+    <div class="login-form">
       <span class="login-form__title">
         Login
       </span>
@@ -22,15 +22,16 @@
       />
       <Button 
         class="btn-success btn-login"
+        @click="loginRequest"
       >
         login
       </Button>
-    </form>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'Login',
@@ -43,11 +44,17 @@ export default {
 		}
 	},
   created() {
-    this.isAuth &&	this.$router.push('/')
+    this.isAuth && this.$router.push('/')
   },
   computed: {
 		...mapGetters(['isAuth']),
 	},
+  methods: {
+    ...mapActions(['sendLoginRequest']),
+    loginRequest() {
+      this.sendLoginRequest({ login: this.login, password: this.password })
+    }
+  }
 }
 </script>
 
@@ -83,6 +90,7 @@ export default {
         background: transparent;
         padding: 0 5px;
         box-sizing: border-box;
+        caret-color: #fff;
 
         &:-webkit-autofill,
         &:-webkit-autofill:hover, 

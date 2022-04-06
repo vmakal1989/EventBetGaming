@@ -1,7 +1,7 @@
 export default {
-	loading: state => state.loading,
-	isAuth: state => state.isAuth,
-	token: state => state.token,
-	balance: state => state.balance,
-	games: state => state.games
+  loading: state => state.loading,
+  isAuth: state => state.isAuth,
+  authInfo: state => state.authInfo,
+  balance: state => state.balance,
+  games: state => state.games
 }

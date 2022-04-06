@@ -14,7 +14,12 @@ export default {
   components: {
   },
   created() {
-    !this.isAuth &&	this.$router.push('/login')
+    !this.isAuth && this.$router.push('/login')
+    this.$bus.on('is-auth', ({isAuth}) => {
+      isAuth 
+        ? this.$router.push('/')
+        : this.$router.push('/login')
+    });
   },
   computed: {
 		...mapGetters(['isAuth']),

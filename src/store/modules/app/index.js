@@ -4,16 +4,16 @@ import mutations from './mutations'
 
 
 const state = {
-	loading: false,
-	isAuth: false,
-	token: null,
-	balance: 0,
-	games: []
+  loading: false,
+  isAuth: false,
+  authInfo: null,
+  balance: 0,
+  games: []
 }
 
 export default {
-	state,
-	actions,
-	getters,
-	mutations
+  state,
+  actions,
+  getters,
+  mutations
 }

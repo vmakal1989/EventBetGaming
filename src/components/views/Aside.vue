@@ -3,16 +3,12 @@
     <section class="aside__container">
       <UserAvatar className="aside__user-avatar"/>
       <div class="aside__user-balance-list">
-        <div 
-          v-for="({text, amount}, index) of userBalances"
-          :key="index"
-          class="aside__user-total-balance"
-        >
+        <div class="aside__user-total-balance">
           <span class="-text">
-            {{text}}
+            Total balace
           </span>
           <span class="-amount">
-            {{amount}}
+            {{balance}}
           </span>
         </div>
       </div>
@@ -21,18 +17,12 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Aside',
-  data() {
-    return {
-      userBalances: [
-        {
-          text: 'Total balace',
-          amount: 0
-        }
-      ]
-    }
+  computed: {
+    ...mapGetters(['balance'])
   }
 }
 </script>
@@ -42,12 +32,12 @@ export default {
     width: 320px;
     padding: 20px;
     background-color: #1c1e27;
+    height: 100vh;
 
     &__container {
       display: flex;
       flex-direction: column;
       width: 100%;
-      height: 500px;
       box-shadow: 10px 10px .5em #15171c, -10px -10px .5em #2a303b;
       border-radius: 10px;
       background-color: #1f222c;
